@@ -1,0 +1,128 @@
+$color-blue: hsl(315, 100%, 50%);
+$color-blue-black: blue;
+$color-border: green;
+$color-white: #fff;
+
+.dynamic_form {
+  input[type='text'] {
+    border: none;
+    border-bottom: 1px solid #e2e2e2;
+  }
+  input[type='textarea'] {
+    border-bottom: 1px solid #e2e2e2;
+  }
+  input[type='text']:hover,
+  input[type='text']:focus,
+  input[type='textarea']:hover,
+  input[type='textarea']:focus {
+    border-color: #03539d;
+    outline: none;
+  }
+  // background-color: green;
+  .form {
+    // background: red;
+  }
+
+  input,
+  select {
+    background-color: transparent;
+  }
+  .nested_control {
+    position: relative;
+    display: flex;
+    margin: 20px 10px;
+    flex-wrap: wrap;
+
+    &.animated {
+      label {
+        width: auto;
+        position: absolute;
+        top: -2px;
+        transition: -webkit-transform 0.2s;
+        transition: transform 0.2s;
+        transition: transform 0.2s, -webkit-transform 0.2s;
+        -webkit-transform: translateY(-80%);
+        -ms-transform: translateY(-80%);
+        font-size: 0.8em;
+        transform: translateY(-80%) translateX(5px) scale(1.1);
+        clip: rect(1px, 1px, 1px, 1px);
+        -webkit-clip-path: inset(50%);
+        clip-path: inset(50%);
+      }
+      &.is_dirty label {
+        clip: auto;
+        -webkit-clip-path: none;
+        clip-path: none;
+        -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        transform: translateY(-100%) translateX(0px) scale(1);
+      }
+      input {
+        background-color: #fff;
+        // background-color: var(--color-bg,#f2f2f2);
+        padding-top: 0.5em;
+        // padding-top: var(--form-control-padding-y,0.5em);
+        padding-bottom: 0.5em;
+        // padding-bottom: var(--form-control-padding-y,0.5em);
+        padding-left: 0.75em;
+        // padding-left: var(--form-control-padding-x,0.75em);
+        padding-right: 0.75em;
+        // padding-right: var(--form-control-padding-x,0.75em);
+        border-radius: 0.25em;
+        // border-radius: var(--form-control-radius,0.25em);
+      }
+    }
+    &.not_animated {
+    }
+  }
+  label {
+    width: 100%;
+    text-align: left;
+  }
+  select {
+    border: 1px solid #e2e2e2;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none;
+    height: 4.5rem;
+    padding: 0 5.4rem 0 1.6rem;
+    border-radius: 3px;
+    font-family: Source Sans Pro, arial, sans-serif;
+    background-size: 1.7rem, 4.2rem 100%;
+    background-position: calc(100% - 11px) 50%, 100% 50%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: all 0.1s ease-out;
+
+    background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjE3OTIiIGhlaWdodD0iMTc5MiIgdmlld0JveD0iMCAwIDE3OTIgMTc5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjMDM1MzlEIiBkPSJNMTQwOCA3MDRxMCAyNi0xOSA0NWwtNDQ4IDQ0OHEtMTkgMTktNDUgMTl0LTQ1LTE5bC00NDgtNDQ4cS0xOS0xOS0xOS00NXQxOS00NSA0NS0xOWg4OTZxMjYgMCA0NSAxOXQxOSA0NXoiLz48L3N2Zz4='),
+      linear-gradient(
+        to right,
+        $color-border,
+        $color-border 1px,
+        $color-white 1px,
+        $color-white 1px
+      );
+    &:hover {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjQyIiBoZWlnaHQ9IjQyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDcwNHEwIDI2LTE5IDQ1bC00NDggNDQ4cS0xOSAxOS00NSAxOXQtNDUtMTlsLTQ0OC00NDhxLTE5LTE5LTE5LTQ1dDE5LTQ1IDQ1LTE5aDg5NnEyNiAwIDQ1IDE5dDE5IDQ1eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=='),
+        linear-gradient(
+          to right,
+          $color-blue,
+          $color-blue 1px,
+          $color-blue 1px,
+          $color-blue 1px
+        );
+    }
+
+    &:focus {
+      background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjxzdmcgd2lkdGg9IjQyIiBoZWlnaHQ9IjQyIiB2aWV3Qm94PSIwIDAgMTc5MiAxNzkyIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xNDA4IDEyMTZxMCAyNi0xOSA0NXQtNDUgMTloLTg5NnEtMjYgMC00NS0xOXQtMTktNDUgMTktNDVsNDQ4LTQ0OHExOS0xOSA0NS0xOXQ0NSAxOWw0NDggNDQ4cTE5IDE5IDE5IDQ1eiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg=='),
+        linear-gradient(
+          to right,
+          $color-blue,
+          $color-blue-black 1px,
+          $color-blue-black 1px,
+          $color-blue-black 1px
+        );
+      border-color: $color-blue-black;
+    }
+  }
+}
